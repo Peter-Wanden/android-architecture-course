@@ -1,13 +1,14 @@
 package com.techyourchance.mvc.screens.questionslist;
 
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.techyourchance.mvc.R;
 import com.techyourchance.mvc.questions.Question;
@@ -18,14 +19,17 @@ import com.techyourchance.mvc.screens.common.views.BaseObservableViewMvc;
 
 import java.util.List;
 
-public class QuestionsListViewMvcImpl extends BaseObservableViewMvc<QuestionsListViewMvc.Listener>
-        implements QuestionsListViewMvc, QuestionsRecyclerAdapter.Listener {
+public class QuestionsListViewMvcImpl
+        extends
+        BaseObservableViewMvc<QuestionsListViewMvc.Listener>
+        implements
+        QuestionsListViewMvc,
+        QuestionsRecyclerAdapter.Listener {
 
     private final ToolbarViewMvc mToolbarViewMvc;
     private final NavDrawerHelper mNavDrawerHelper;
 
     private final Toolbar mToolbar;
-    private final RecyclerView mRecyclerQuestions;
     private final QuestionsRecyclerAdapter mAdapter;
     private final ProgressBar mProgressBar;
 
@@ -36,7 +40,7 @@ public class QuestionsListViewMvcImpl extends BaseObservableViewMvc<QuestionsLis
         mNavDrawerHelper = navDrawerHelper;
         setRootView(inflater.inflate(R.layout.layout_questions_list, parent, false));
 
-        mRecyclerQuestions = findViewById(R.id.recycler_questions);
+        RecyclerView mRecyclerQuestions = findViewById(R.id.recycler_questions);
         mRecyclerQuestions.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter = new QuestionsRecyclerAdapter(this, viewMvcFactory);
         mRecyclerQuestions.setAdapter(mAdapter);
@@ -51,7 +55,8 @@ public class QuestionsListViewMvcImpl extends BaseObservableViewMvc<QuestionsLis
     private void initToolbar() {
         mToolbarViewMvc.setTitle(getString(R.string.questions_list_screen_title));
         mToolbar.addView(mToolbarViewMvc.getRootView());
-        mToolbarViewMvc.enableHamburgerButtonAndListen(new ToolbarViewMvc.HamburgerClickListener() {
+        mToolbarViewMvc.enableHamburgerButtonAndListen(
+                new ToolbarViewMvc.HamburgerClickListener() {
             @Override
             public void onHamburgerClicked() {
                 mNavDrawerHelper.openDrawer();

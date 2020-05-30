@@ -1,11 +1,13 @@
 package com.techyourchance.mvc.screens.common.dialogs;
 
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 
 import com.techyourchance.mvc.common.CustomApplication;
 import com.techyourchance.mvc.common.dependencyinjection.ControllerCompositionRoot;
 
-public abstract class BaseDialog extends DialogFragment {
+public abstract class BaseDialog
+        extends
+        DialogFragment {
 
 
     private ControllerCompositionRoot mControllerCompositionRoot;

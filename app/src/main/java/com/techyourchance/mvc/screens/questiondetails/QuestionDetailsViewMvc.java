@@ -6,9 +6,11 @@ import com.techyourchance.mvc.screens.common.navdrawer.NavDrawerViewMvc;
 import com.techyourchance.mvc.screens.common.views.ObservableViewMvc;
 import com.techyourchance.mvc.screens.common.views.ViewMvc;
 
-public interface QuestionDetailsViewMvc extends ObservableViewMvc<QuestionDetailsViewMvc.Listener> {
+public interface QuestionDetailsViewMvc
+        extends
+        ObservableViewMvc<QuestionDetailsViewMvc.Listener> {
 
-    public interface Listener {
+    interface Listener {
         void onNavigateUpClicked();
     }
 

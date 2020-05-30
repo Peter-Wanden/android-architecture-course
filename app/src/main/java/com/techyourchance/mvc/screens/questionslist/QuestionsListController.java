@@ -10,7 +10,8 @@ import com.techyourchance.mvc.screens.common.screensnavigator.ScreensNavigator;
 import java.io.Serializable;
 import java.util.List;
 
-public class QuestionsListController  implements
+public class QuestionsListController
+        implements
         QuestionsListViewMvc.Listener,
         FetchLastActiveQuestionsUseCase.Listener,
         DialogsEventBus.Listener {
@@ -28,29 +29,29 @@ public class QuestionsListController  implements
 
     private ScreenState mScreenState = ScreenState.IDLE;
 
-    public QuestionsListController(FetchLastActiveQuestionsUseCase fetchLastActiveQuestionsUseCase,
+    public QuestionsListController(FetchLastActiveQuestionsUseCase useCase,
                                    ScreensNavigator screensNavigator,
                                    DialogsManager dialogsManager,
                                    DialogsEventBus dialogsEventBus) {
-        mFetchLastActiveQuestionsUseCase = fetchLastActiveQuestionsUseCase;
+        mFetchLastActiveQuestionsUseCase = useCase;
         mScreensNavigator = screensNavigator;
         mDialogsManager = dialogsManager;
         mDialogsEventBus = dialogsEventBus;
     }
 
-    public void bindView(QuestionsListViewMvc viewMvc) {
+    void bindView(QuestionsListViewMvc viewMvc) {
         mViewMvc = viewMvc;
     }
 
-    public SavedState getSavedState() {
+    SavedState getSavedState() {
         return new SavedState(mScreenState);
     }
 
-    public void restoreSavedState(SavedState savedState) {
+    void restoreSavedState(SavedState savedState) {
         mScreenState = savedState.mScreenState;
     }
 
-    public void onStart() {
+    void onStart() {
         mViewMvc.registerListener(this);
         mFetchLastActiveQuestionsUseCase.registerListener(this);
         mDialogsEventBus.registerListener(this);
@@ -60,7 +61,7 @@ public class QuestionsListController  implements
         }
     }
 
-    public void onStop() {
+    void onStop() {
         mViewMvc.unregisterListener(this);
         mFetchLastActiveQuestionsUseCase.unregisterListener(this);
         mDialogsEventBus.unregisterListener(this);
@@ -105,14 +106,11 @@ public class QuestionsListController  implements
         }
     }
 
-    public static class SavedState implements Serializable {
+    static class SavedState implements Serializable {
         private final ScreenState mScreenState;
 
-        public SavedState(ScreenState screenState) {
+        SavedState(ScreenState screenState) {
             mScreenState = screenState;
         }
     }
-
-
-
 }

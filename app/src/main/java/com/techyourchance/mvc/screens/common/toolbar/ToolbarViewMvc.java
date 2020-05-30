@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.techyourchance.mvc.R;
 import com.techyourchance.mvc.screens.common.views.BaseViewMvc;
-import com.techyourchance.mvc.screens.questiondetails.QuestionDetailsViewMvcImpl;
 
 public class ToolbarViewMvc extends BaseViewMvc {
 

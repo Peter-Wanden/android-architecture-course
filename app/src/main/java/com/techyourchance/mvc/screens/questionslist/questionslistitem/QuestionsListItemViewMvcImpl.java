@@ -1,6 +1,6 @@
 package com.techyourchance.mvc.screens.questionslist.questionslistitem;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +10,11 @@ import com.techyourchance.mvc.R;
 import com.techyourchance.mvc.questions.Question;
 import com.techyourchance.mvc.screens.common.views.BaseObservableViewMvc;
 
-public class QuestionsListItemViewMvcImpl extends BaseObservableViewMvc<QuestionsListItemViewMvc.Listener>
-        implements QuestionsListItemViewMvc {
+public class QuestionsListItemViewMvcImpl
+        extends
+        BaseObservableViewMvc<QuestionsListItemViewMvc.Listener>
+        implements
+        QuestionsListItemViewMvc {
 
     private final TextView mTxtTitle;
 

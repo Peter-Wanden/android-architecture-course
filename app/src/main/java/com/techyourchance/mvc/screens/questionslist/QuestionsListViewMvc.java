@@ -6,9 +6,11 @@ import com.techyourchance.mvc.screens.common.views.ObservableViewMvc;
 
 import java.util.List;
 
-public interface QuestionsListViewMvc extends ObservableViewMvc<QuestionsListViewMvc.Listener> {
+public interface QuestionsListViewMvc
+        extends
+        ObservableViewMvc<QuestionsListViewMvc.Listener> {
 
-    public interface Listener {
+    interface Listener {
         void onQuestionClicked(Question question);
     }
 
@@ -17,5 +19,4 @@ public interface QuestionsListViewMvc extends ObservableViewMvc<QuestionsListVie
     void showProgressIndication();
 
     void hideProgressIndication();
-
 }

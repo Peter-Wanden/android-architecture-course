@@ -2,24 +2,27 @@ package com.techyourchance.mvc.screens.common.dialogs.promptdialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatButton;
-import android.view.View;
-import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-import com.techyourchance.mvc.R;
 import com.techyourchance.mvc.screens.common.dialogs.BaseDialog;
 import com.techyourchance.mvc.screens.common.dialogs.DialogsEventBus;
 
-public class PromptDialog extends BaseDialog implements PromptViewMvc.Listener {
+public class PromptDialog
+        extends
+        BaseDialog
+        implements
+        PromptViewMvc.Listener {
 
     protected static final String ARG_TITLE = "ARG_TITLE";
     protected static final String ARG_MESSAGE = "ARG_MESSAGE";
     protected static final String ARG_POSITIVE_BUTTON_CAPTION = "ARG_POSITIVE_BUTTON_CAPTION";
     protected static final String ARG_NEGATIVE_BUTTON_CAPTION = "ARG_NEGATIVE_BUTTON_CAPTION";
 
-    public static PromptDialog newPromptDialog(String title, String message, String positiveButtonCaption, String negativeButtonCaption) {
+    public static PromptDialog newPromptDialog(String title,
+                                               String message,
+                                               String positiveButtonCaption,
+                                               String negativeButtonCaption) {
         PromptDialog promptDialog = new PromptDialog();
         Bundle args = new Bundle(4);
         args.putString(ARG_TITLE, title);

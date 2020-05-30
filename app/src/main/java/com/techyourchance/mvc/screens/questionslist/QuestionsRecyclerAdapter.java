@@ -1,7 +1,8 @@
 package com.techyourchance.mvc.screens.questionslist;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.ViewGroup;
 
 import com.techyourchance.mvc.questions.Question;
@@ -11,8 +12,11 @@ import com.techyourchance.mvc.screens.questionslist.questionslistitem.QuestionsL
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionsRecyclerAdapter extends RecyclerView.Adapter<QuestionsRecyclerAdapter.MyViewHolder>
-        implements QuestionsListItemViewMvc.Listener {
+public class QuestionsRecyclerAdapter
+        extends
+        RecyclerView.Adapter<QuestionsRecyclerAdapter.MyViewHolder>
+        implements
+        QuestionsListItemViewMvc.Listener {
 
     public interface Listener {
         void onQuestionClicked(Question question);
@@ -22,7 +26,7 @@ public class QuestionsRecyclerAdapter extends RecyclerView.Adapter<QuestionsRecy
 
         private final QuestionsListItemViewMvc mViewMvc;
 
-        public MyViewHolder(QuestionsListItemViewMvc viewMvc) {
+        MyViewHolder(QuestionsListItemViewMvc viewMvc) {
             super(viewMvc.getRootView());
             mViewMvc = viewMvc;
         }
@@ -34,12 +38,12 @@ public class QuestionsRecyclerAdapter extends RecyclerView.Adapter<QuestionsRecy
 
     private List<Question> mQuestions = new ArrayList<>();
 
-    public QuestionsRecyclerAdapter(Listener listener, ViewMvcFactory viewMvcFactory) {
+    QuestionsRecyclerAdapter(Listener listener, ViewMvcFactory viewMvcFactory) {
         mListener = listener;
         mViewMvcFactory = viewMvcFactory;
     }
 
-    public void bindQuestions(List<Question> questions) {
+    void bindQuestions(List<Question> questions) {
         mQuestions = new ArrayList<>(questions);
         notifyDataSetChanged();
     }

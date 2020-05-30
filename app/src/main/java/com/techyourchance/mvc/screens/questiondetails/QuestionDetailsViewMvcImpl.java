@@ -1,6 +1,6 @@
 package com.techyourchance.mvc.screens.questiondetails;
 
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +15,9 @@ import com.techyourchance.mvc.screens.common.toolbar.ToolbarViewMvc;
 import com.techyourchance.mvc.screens.common.views.BaseObservableViewMvc;
 
 
-public class QuestionDetailsViewMvcImpl extends BaseObservableViewMvc<QuestionDetailsViewMvc.Listener>
+public class QuestionDetailsViewMvcImpl
+        extends BaseObservableViewMvc<QuestionDetailsViewMvc.Listener>
         implements QuestionDetailsViewMvc {
-
 
     private final ToolbarViewMvc mToolbarViewMvc;
     private final Toolbar mToolbar;

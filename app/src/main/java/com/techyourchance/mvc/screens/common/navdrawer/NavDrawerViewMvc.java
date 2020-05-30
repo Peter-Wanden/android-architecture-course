@@ -4,7 +4,9 @@ import android.widget.FrameLayout;
 
 import com.techyourchance.mvc.screens.common.views.ObservableViewMvc;
 
-public interface NavDrawerViewMvc extends ObservableViewMvc<NavDrawerViewMvc.Listener> {
+public interface NavDrawerViewMvc
+        extends
+        ObservableViewMvc<NavDrawerViewMvc.Listener> {
 
     interface Listener {
 

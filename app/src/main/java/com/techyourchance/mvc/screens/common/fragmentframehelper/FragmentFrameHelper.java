@@ -1,10 +1,11 @@
 package com.techyourchance.mvc.screens.common.fragmentframehelper;
 
-import android.app.Activity;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 
+import android.app.Activity;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class FragmentFrameHelper {
 
@@ -12,7 +13,9 @@ public class FragmentFrameHelper {
     private final FragmentFrameWrapper mFragmentFrameWrapper;
     private final FragmentManager mFragmentManager;
 
-    public FragmentFrameHelper(Activity activity, FragmentFrameWrapper fragmentFrameWrapper, FragmentManager fragmentManager) {
+    public FragmentFrameHelper(Activity activity,
+                               FragmentFrameWrapper fragmentFrameWrapper,
+                               FragmentManager fragmentManager) {
         mActivity = activity;
         mFragmentFrameWrapper = fragmentFrameWrapper;
         mFragmentManager = fragmentManager;
@@ -113,5 +116,4 @@ public class FragmentFrameHelper {
     private int getFragmentFrameId() {
         return mFragmentFrameWrapper.getFragmentFrame().getId();
     }
-
 }

@@ -1,9 +1,10 @@
 package com.techyourchance.mvc.common.dependencyinjection;
 
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import com.techyourchance.mvc.networking.StackoverflowApi;
 import com.techyourchance.mvc.questions.FetchLastActiveQuestionsUseCase;
@@ -83,7 +84,10 @@ public class ControllerCompositionRoot {
     }
 
     private FragmentFrameHelper getFragmentFrameHelper() {
-        return new FragmentFrameHelper(getActivity(), getFragmentFrameWrapper(), getFragmentManager());
+        return new FragmentFrameHelper(
+                getActivity(),
+                getFragmentFrameWrapper(),
+                getFragmentManager());
     }
 
     private FragmentFrameWrapper getFragmentFrameWrapper() {
